@@ -14,12 +14,17 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Setup Node  
       - uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
-          cache: 'npm'
-          cache-dependency-path: './package-lock.json'
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: deps-node-modules-${{hashFiles('**/package-lock.json')}}        
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
@@ -57,9 +62,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
-          cache: 'npm'
-          cache-dependency-path: './package-lock.json'
-
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: deps-node-modules-${{hashFiles('**/package-lock.json')}} 
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
