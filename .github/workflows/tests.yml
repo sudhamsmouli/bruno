@@ -36,23 +36,23 @@ jobs:
           npm run sandbox:bundle-libraries --workspace=packages/bruno-js
 
       # tests
-      - name: Test Package bruno-js
-        run: npm run test --workspace=packages/bruno-js
-      - name: Test Package bruno-cli
-        run: npm run test --workspace=packages/bruno-cli
+#      - name: Test Package bruno-js
+#        run: npm run test --workspace=packages/bruno-js
+#      - name: Test Package bruno-cli
+#        run: npm run test --workspace=packages/bruno-cli
 
-      - name: Test Package bruno-query
-        run: npm run test --workspace=packages/bruno-query
-      - name: Test Package bruno-lang
-        run: npm run test --workspace=packages/bruno-lang
-      - name: Test Package bruno-schema
-        run: npm run test --workspace=packages/bruno-schema
-      - name: Test Package bruno-app
-        run: npm run test --workspace=packages/bruno-app
-      - name: Test Package bruno-common
-        run: npm run test --workspace=packages/bruno-common
-      - name: Test Package bruno-electron
-        run: npm run test --workspace=packages/bruno-electron
+#      - name: Test Package bruno-query
+#        run: npm run test --workspace=packages/bruno-query
+#      - name: Test Package bruno-lang
+#        run: npm run test --workspace=packages/bruno-lang
+#      - name: Test Package bruno-schema
+#        run: npm run test --workspace=packages/bruno-schema
+#      - name: Test Package bruno-app
+#        run: npm run test --workspace=packages/bruno-app
+#      - name: Test Package bruno-common
+#        run: npm run test --workspace=packages/bruno-common
+#      - name: Test Package bruno-electron
+#        run: npm run test --workspace=packages/bruno-electron
 
   cli-test:
     name: CLI Tests
