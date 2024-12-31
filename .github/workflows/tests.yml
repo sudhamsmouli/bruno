@@ -82,9 +82,9 @@ jobs:
           npm install
           node ../../bruno-cli/bin/bru.js run --env Prod --output junit.xml --format junit
 
-      - name: Publish Test Report
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
-        with:
-          files: packages/bruno-tests/collection/junit.xml
-          comment_mode: always
+#      - name: Publish Test Report
+#        uses: EnricoMi/publish-unit-test-result-action@v2
+#        if: always()
+#        with:
+#          files: packages/bruno-tests/collection/junit.xml
+#          comment_mode: always
